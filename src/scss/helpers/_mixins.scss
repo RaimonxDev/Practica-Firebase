@@ -1,0 +1,12 @@
+@mixin mq($bp){
+    //map-has-key es para recorrer el mapa
+    @if map-has-key ($breakpoints,$bp){
+        @media screen and (min-width: map-get($breakpoints,$bp)){
+            @content;
+        }
+    }@else{
+        @media screen and (min-width:$bp){
+            @content;
+        }
+    }
+}
